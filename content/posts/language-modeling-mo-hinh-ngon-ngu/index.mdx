@@ -12,7 +12,9 @@ banner: https://images.viblo.asia/e5f1cc64-73a5-427e-b83d-cd5fd524ba76.PNG
 
 Mô hình ngôn ngữ là một thuật ngữ mà bất cứ ai đã, đang và sẽ tìm hiểu về Xử lí ngôn ngữ tự nhiên (NLP) đều biết và cần phải biết để có thể hiểu rõ hơn về cách thức mà một ngôn ngữ được xây dựng từ một bộ từ vựng, về cách đánh giá, cách xử lí đối với ngôn ngữ tự nhiên cũng như là tiền đề để đi sâu vào tìm hiểu các lĩnh vực sâu xa hơn như : sửa lỗi chính tả, dịch máy, gán nhãn từ loại, ... . Một ứng dụng phổ biến của mô hình ngôn ngữ mà mọi người hầu như tiếp xúc nhiều nhất đó là việc **tự động gợi ý từ tiếp theo** trên thanh tìm kiếm của Google.
 
-![img](https://images.viblo.asia/e5f1cc64-73a5-427e-b83d-cd5fd524ba76.PNG)
+<p align="center">
+  <img src="https://images.viblo.asia/e5f1cc64-73a5-427e-b83d-cd5fd524ba76.PNG" alt="drawing" style="width:100%;"/>
+</p>
 
 Trong bài viết này, mình sẽ cùng các bạn tìm hiểu một cách chi tiết, rõ ràng nhất về bản chất của một mô hình ngôn ngữ cũng như survey qua các hướng xây dựng mô hình ngôn ngữ đang phổ biến hiện nay. Cuối bài viết, chúng ta cũng sẽ thử xây dựng một mô hình ngôn ngữ nho nhỏ trong tiếng việt và ứng dụng nó vào bài toán **thêm dấu câu cho tiếng việt**
 > P/s : Bài viết được tổng hợp từ những kiến thức mình tìm hiểu được trong thời gian gần đây về NLP nên sẽ không tránh khỏi những sai sót trong cách hiểu cũng như cách tiếp cận vấn đề. Rất mong các bạn góp ý thêm dưới comment nếu cảm thấy mình có trình bày không hợp lí phần nào :sweat_smile:
@@ -96,7 +98,9 @@ Một nhược điểm của mô hình n-gram là không đánh giá được ng
 
 Để giải quyết vấn đề này, Structured Language Models ra đời. Structured Language Models hay mô hình ngôn ngữ có cấu trúc, cố gắng hướng đến một hệ thống phân cấp cho các từ vựng trong một câu văn. Việc này kết hợp với n-gram sẽ cho kết quả bao quát được ngữ cảnh của toàn câu văn, cải thiện độ chính xác của mô hình 
 
-![img](https://images.viblo.asia/421922de-7737-48e8-ba4f-0dcd0e05aab5.png)
+<p align="center">
+  <img src="https://images.viblo.asia/421922de-7737-48e8-ba4f-0dcd0e05aab5.png" alt="drawing" style="width:100%;"/>
+</p>
 
 * ### Neural Network Language Model
 Neural Network Language Model là những phương pháp mới nhất dựa trên mạng Neural để xây dựng mô hình ngôn ngữ, các mô hình này còn có một tên gọi khác là Continuous-space language models. 
@@ -105,14 +109,19 @@ Neural Network Language Model cũng được chia thành 2 hướng tiếp cận
 **Feed-forward neural network based LM**: 
 Feed-forward neural network được đề xuất để giải quyết 1 vấn đề khác của N-gram liên quan đến độ thưa thớt dữ liệu (khi tồn tại nhiều câu, cụm từ trong thực tế nhưng lại không được thu thập trong dữ liệu train). Mạng neural được sử dụng ở đây là 1 mạng neural 3 lớp, nhằm mục tiêu học được các tham số cần thiết để tính xác suất $p(w_n|w_1...w_{n-1})$. 
 
-![img](https://miro.medium.com/max/700/0*5DVF85wwUSR6Y_B4.)
+<p align="center">
+  <img src="https://miro.medium.com/max/700/0*5DVF85wwUSR6Y_B4.png" alt="drawing" style="width:100%;"/>
+</p>
 
 **Recurrent Neural Network Based LM**: 
 Recurrent Neural Network lại tập trung giải quyết một khía cạnh khác về ngữ cảnh của toàn bộ câu, giúp giải quyết được các giới hạn về ngữ cảnh. Hiện nay, các mô hình ngôn ngữ dựa trên RNN hoặc các phát triển từ nó như LSTM, ... đang đạt được các kết quả State of the art. 
 
 Nếu như với mô hình Feed-forward neural network, dữ liệu đầu vào cần yêu cầu số từ cố định, tuy nhiên, điều này là không thể xảy ra trong thực tế, do các câu có độ dài  ngắn khác nhau, Recurrent Neural Network cũng đồng thời khắc phục được nhược điểm này với việc chấp nhận đầu vào có độ dài bất kì. 
 
-![img](https://miro.medium.com/max/361/0*2tGdc7p7u3oV1HEp.)
+<p align="center">
+  <img src="https://miro.medium.com/max/361/0*2tGdc7p7u3oV1HEp.png" alt="drawing" style="width:100%;"/>
+</p>
+
 # 2. Ứng dụng mô hình ngôn ngữ trong bài toán thêm dấu tiếng việt
 OK,  tạm xong phần survey khiến các bạn nhức não (và khiến mình nhức tay - do viết nhiều quá @@), trong phần này, chúng ta sẽ bắt tay xây dựng một mô hình ngôn ngữ cho Tiếng Việt để cảm thấy chút hứng thú với chủ đề này. 
 
@@ -139,7 +148,10 @@ Tờ The Sun trích nguồn tin từ hoàng gia cho biết nữ hoàng cũng đ�
 
 OK, bắt tay vào công đoạn đầu tiên, là cơ sở cho sự thành bại của toàn bộ bài toán nào : Xây dựng mô hình Trigram.
 
-![img](https://1.bp.blogspot.com/-nZFc7P6o3Yc/XQo2cYPM_ZI/AAAAAAAABxM/XBqYSa06oyQ_sxQzPcgnUxb5msRwDrJrQCLcBGAs/s1600/image001.png)
+<p align="center">
+  <img src="https://1.bp.blogspot.com/-nZFc7P6o3Yc/XQo2cYPM_ZI/AAAAAAAABxM/XBqYSa06oyQ_sxQzPcgnUxb5msRwDrJrQCLcBGAs/s1600/image001.png" alt="drawing" style="width:100%;"/>
+</p>
+
 ## Xây dựng mô hình ngôn ngữ
 Việc trước tiên, chúng ta cần load dữ liệu trước đã 
 ```python
@@ -377,7 +389,9 @@ print(detokenize(result[0][0]))
 # 3. Kết luận
 Trong bài viết này, mình đã giới thiệu với các bạn về lí thuyết của mô hình ngôn ngữ cũng như survey qua các phương pháp xây dựng một mô hình ngôn ngữ hiện nay. Việc hiểu và ứng dụng được mô hình ngôn ngữ sẽ tạo ra cho các bạn một tấm nền vững chắc để bước đi trên con đường dài tìm hiểu về NLP. Về bài thực hành với bài toán thêm dấu câu trong Tiếng Việt, các bạn có thể tiếp tục cải thiện mô hình cả vè tốc độ và kết quả bằng nhiều cách : sử dụng một bộ dữ liệu đa dạng hơn, sử dụng phương pháp search tối ưu hơn, .... Các bạn cũng hoàn toàn có thể phát triển nó thành 1 ứng dụng web như trên trang https://vietnameseaccent.com/ (vài dòng lệnh Flask là đủ rồi :100:)
 
-![](https://images.viblo.asia/0f192b59-370c-44be-8a9b-2f66234edfaa.png)
+<p align="center">
+  <img src="https://images.viblo.asia/0f192b59-370c-44be-8a9b-2f66234edfaa.png" alt="drawing" style="width:100%;"/>
+</p>
 
 Nếu cảm thấy bài viết hữu ích, đừng quên upvote, clip và share bài viết cho mình nha. See ya!
 Full source code của mình hiện public tại đây : https://colab.research.google.com/drive/1dw2sLBUpyVierdbx2QzO-ENB2bne1RCK?usp=sharing
