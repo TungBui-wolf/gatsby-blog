@@ -6,7 +6,22 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    // Used for the title template on pages other than the index site
+    siteTitle: `Snow Wolf`,
+    // Default title of the page
+    siteTitleAlt: `Machine Learning Blog - Learning and Sharing`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `Machine Learning Blog - Learning and Sharing`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://viblo.asia`,
+    // Used for SEO
+    siteDescription: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and line highlighting.`,
+    // Will be set on the <html /> tag
+    siteLanguage: `vi`,
+    // Used for og:image and must be placed inside the `static` folder
+    siteImage: `/banner.jpg`,
+    // Twitter Handle
+    author: `tungbuitien`,
   },
   plugins: [
     {
@@ -25,12 +40,12 @@ module.exports = {
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            name: `Viblo`,
+            url: `https://viblo.asia/u/tungbuitien`,
           },
           {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
+            name: `Linkedin`,
+            url: `https://www.linkedin.com/in/tung-bui-4027191a2/`,
           },
         ],
       },
@@ -45,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
+        name: `machine-learning-blog - learning and sharing`,
+        short_name: `machine-learning-blog`,
         description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
         start_url: `/`,
         background_color: `#fff`,
